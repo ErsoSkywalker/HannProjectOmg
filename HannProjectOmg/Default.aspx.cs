@@ -34,7 +34,7 @@ namespace HannProjectOmg
 
             cmd.CommandType = CommandType.Text;
 
-            cmd.CommandText = "Select idUsuario from Usuarios where [User] = '" + Usuario + "' and [Password] ='" + Password + "';";
+            cmd.CommandText = "Select idUsuario, tipoUsuario from Usuarios where [User] = '" + Usuario + "' and [Password] ='" + Password + "';";
 
             SqlDataReader reader =  cmd.ExecuteReader();
 
@@ -44,7 +44,25 @@ namespace HannProjectOmg
                 {
 
                     Session["idUsuario"] = reader.GetInt32(0);
-                    Response.Redirect("Feed.aspx");
+                    Session["tipoUsuario"] = reader.GetInt32(1);
+
+                    switch (reader.GetInt32(1))
+                    {
+                        case 1:
+                            Response.Redirect("Feed.aspx");
+                            break;
+
+                        case 2:
+                            Response.Redirect("Supervisor.aspx");
+                            break;
+
+                        case 3:
+                            Response.Redirect("/AdministradorThings/Admin.aspx");
+                            break;
+                    }
+
+                    
+
                 } 
             }
             else {

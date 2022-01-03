@@ -1,26 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 
-
-namespace HannProjectOmg
+namespace HannProjectOmg.AdministradorThings
 {
-    public partial class Feed : Page
+    public partial class GestionarInspectores : Page
     {
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HannApp.mdf;Integrated Security=True");
 
-        protected void Page_Load(object sender, EventArgs e){
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-            ContentPlaceHolder Formulario = (ContentPlaceHolder)this.Master.FindControl("MainContent");
-
-            ((Label)Formulario.FindControl("lblSessionEquisDe")).Text = Session["idUsuario"].ToString();
-
-            displayData();
+            if (!IsPostBack)
+            {
+                displayData();
+            }
+            
 
         }
+
+
 
         public void displayData()
         {
@@ -34,17 +39,19 @@ namespace HannProjectOmg
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * from Usuarios;";
+            cmd.CommandText = "Select * from Usuarios where tipoUsuario = 1;";
             cmd.ExecuteNonQuery();
+
+
+
             DataTable tbl = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(tbl);
-            grdUsuarios.DataSource = tbl;
-            grdUsuarios.DataBind();
+            grdInspectores.DataSource = tbl;
+            grdInspectores.DataBind();
 
             con.Close();
 
         }
-
     }
 }

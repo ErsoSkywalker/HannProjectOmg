@@ -106,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdministradorThings\Admin.aspx" />
+    <Content Include="AdministradorThings\GestionarInspectores.aspx" />
+    <Content Include="AdministradorThings\Inspector.aspx" />
     <Content Include="App_Data\HannApp.mdf" />
     <Content Include="App_Data\HannApp_log.ldf">
       <DependentUpon>HannApp.mdf</DependentUpon>
@@ -167,6 +170,27 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorThings\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarInspectores.aspx.cs">
+      <DependentUpon>GestionarInspectores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarInspectores.aspx.designer.cs">
+      <DependentUpon>GestionarInspectores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\Inspector.aspx.cs">
+      <DependentUpon>Inspector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\Inspector.aspx.designer.cs">
+      <DependentUpon>Inspector.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
