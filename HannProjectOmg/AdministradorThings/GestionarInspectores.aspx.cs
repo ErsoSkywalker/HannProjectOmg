@@ -53,5 +53,26 @@ namespace HannProjectOmg.AdministradorThings
             con.Close();
 
         }
+
+        protected void grdInspectores_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+                using (con)
+                {
+                    con.Open();
+                    string query = "DELETE FROM Usuarios WHERE idUsuario = @id";
+                    SqlCommand sqlCmd = new SqlCommand(query, con);
+                    sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(grdInspectores.DataKeys[e.RowIndex].Value.ToString()));
+                    sqlCmd.ExecuteNonQuery();
+                    displayData();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Auxilio uwu");
+            }
+        }
+
     }
 }

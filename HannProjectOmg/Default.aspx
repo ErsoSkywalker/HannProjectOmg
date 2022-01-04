@@ -6,7 +6,7 @@
         <!--<img src="Img/cine3.jpg"  id="cinepolis" alt="Cinépolis®">-->
         <h1 style="opacity: 0.7;">Bienvenido</h1>
         <p class="lead" style="opacity: 0.7;">Sistema para auditorias</p>
-        <p><a href="" class="btn btn-primary btn-lg">Iniciar sesión &raquo;</a></p>
+        <p><a href="/InicioSesion" class="btn btn-primary btn-lg">Iniciar sesión &raquo;</a></p>
     </div>
 
    

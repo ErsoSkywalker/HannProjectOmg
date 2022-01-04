@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Gestionar Inspectores :D</h2>
 
-    <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table">
+    <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idUsuario"
+                ShowHeaderWhenEmpty="true">
         <Columns>
 
             <asp:TemplateField HeaderText="idUsuario">
@@ -20,11 +21,11 @@
                     <asp:Label runat="server" Text='<%# Eval("Apellido") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Actions">
+            <asp:TemplateField>
                 <ItemTemplate>
                     
                     <a href='/AdministradorThings/Inspector?idUsuario=<%# Eval("idUsuario") %>' class="btn btn-info btn-lg">Editar</a>
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-lg btn-danger"/>
+                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-lg btn-danger" CommandName="Delete" ToolTip="Delete" />
 
                 </ItemTemplate>
             </asp:TemplateField>

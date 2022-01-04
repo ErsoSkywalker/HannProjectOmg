@@ -16,8 +16,12 @@ namespace HannProjectOmg.AdministradorThings
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HannApp.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                displayData();
+            }
             
-            displayData();
         }
 
         public void displayData()
@@ -60,15 +64,17 @@ namespace HannProjectOmg.AdministradorThings
 
         }
 
+        
+
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+
             try
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-
-                cmd.CommandText = "UPDATE Usuarios set Nombre='" + txtNombre.Text + "', Apellido='" + txtApellido.Text + "', [User]='" + txtUser.Text + "', [Password]='" + txtPassword.Text + "' where idUsuario = '" + Request.QueryString["idUsuario"] + "';";
+                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '"+ txtPassword.Text.Trim()+"', '"+ txtNombre.Text.Trim() +"', '"+ txtApellido.Text.Trim() +"' ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
