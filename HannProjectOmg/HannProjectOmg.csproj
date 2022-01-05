@@ -104,8 +104,14 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdministradorThings\Admin.aspx" />
+    <Content Include="AdministradorThings\Complejo.aspx" />
+    <Content Include="AdministradorThings\GestionarComplejos.aspx" />
     <Content Include="AdministradorThings\GestionarInspectores.aspx" />
+    <Content Include="AdministradorThings\GestionarRegiones.aspx" />
+    <Content Include="AdministradorThings\GestionarSupervisores.aspx" />
     <Content Include="AdministradorThings\Inspector.aspx" />
+    <Content Include="AdministradorThings\Region.aspx" />
+    <Content Include="AdministradorThings\Supervisor.aspx" />
     <Content Include="App_Data\HannApp.mdf" />
     <Content Include="App_Data\HannApp_log.ldf">
       <DependentUpon>HannApp.mdf</DependentUpon>
@@ -176,6 +182,20 @@
     <Compile Include="AdministradorThings\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdministradorThings\Complejo.aspx.cs">
+      <DependentUpon>Complejo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\Complejo.aspx.designer.cs">
+      <DependentUpon>Complejo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarComplejos.aspx.cs">
+      <DependentUpon>GestionarComplejos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarComplejos.aspx.designer.cs">
+      <DependentUpon>GestionarComplejos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministradorThings\GestionarInspectores.aspx.cs">
       <DependentUpon>GestionarInspectores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,12 +203,40 @@
     <Compile Include="AdministradorThings\GestionarInspectores.aspx.designer.cs">
       <DependentUpon>GestionarInspectores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdministradorThings\GestionarRegiones.aspx.cs">
+      <DependentUpon>GestionarRegiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarRegiones.aspx.designer.cs">
+      <DependentUpon>GestionarRegiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarSupervisores.aspx.cs">
+      <DependentUpon>GestionarSupervisores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\GestionarSupervisores.aspx.designer.cs">
+      <DependentUpon>GestionarSupervisores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministradorThings\Inspector.aspx.cs">
       <DependentUpon>Inspector.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdministradorThings\Inspector.aspx.designer.cs">
       <DependentUpon>Inspector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\Region.aspx.cs">
+      <DependentUpon>Region.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\Region.aspx.designer.cs">
+      <DependentUpon>Region.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\Supervisor.aspx.cs">
+      <DependentUpon>Supervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\Supervisor.aspx.designer.cs">
+      <DependentUpon>Supervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

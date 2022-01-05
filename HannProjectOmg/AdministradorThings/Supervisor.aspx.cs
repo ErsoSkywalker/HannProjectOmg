@@ -9,21 +9,19 @@ using System.Data;
 
 namespace HannProjectOmg.AdministradorThings
 {
-    public partial class Inspector : System.Web.UI.Page
+    public partial class Supervisor : System.Web.UI.Page
     {
-        
-
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HannApp.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
-                if(Request.QueryString == null || Request.QueryString.Keys.Count == 0)
+                if (Request.QueryString == null || Request.QueryString.Keys.Count == 0)
                 {
 
                     btnUpdate.Visible = false;
-                    
+
                 }
                 else
                 {
@@ -31,9 +29,9 @@ namespace HannProjectOmg.AdministradorThings
                     btnInsert.Visible = false;
                 }
 
-                
+
             }
-            
+
         }
 
         public void displayData()
@@ -51,7 +49,7 @@ namespace HannProjectOmg.AdministradorThings
 
             cmd.CommandType = CommandType.Text;
             //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select [User], [Password], Nombre, Apellido from Usuarios where idUsuario = "+ Request.QueryString["idUsuario"] +";";
+            cmd.CommandText = "Select [User], [Password], Nombre, Apellido from Usuarios where idUsuario = " + Request.QueryString["idUsuario"] + ";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -69,14 +67,14 @@ namespace HannProjectOmg.AdministradorThings
             }
             else
             {
-                Response.Redirect("/AdministradorThings/GestionarInspectores");
+                Response.Redirect("/AdministradorThings/GestionarSupervisores");
             }
 
             con.Close();
 
         }
 
-        
+
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -86,17 +84,17 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '"+ txtPassword.Text.Trim()+"', '"+ txtNombre.Text.Trim() +"', '"+ txtApellido.Text.Trim() +"' ;";
+                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "' ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                Response.Redirect("/AdministradorThings/GestionarInspectores");
+                Response.Redirect("/AdministradorThings/GestionarSupervisores");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lblError.Text = ex.Message;
             }
-            
+
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
@@ -106,11 +104,11 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 1 ;";
+                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 2 ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                Response.Redirect("/AdministradorThings/GestionarInspectores");
+                Response.Redirect("/AdministradorThings/GestionarSupervisores");
             }
             catch (Exception ex)
             {

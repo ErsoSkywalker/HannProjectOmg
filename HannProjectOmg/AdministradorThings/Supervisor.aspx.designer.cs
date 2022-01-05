@@ -11,7 +11,7 @@ namespace HannProjectOmg.AdministradorThings
 {
 
 
-    public partial class Inspector
+    public partial class Supervisor
     {
 
         /// <summary>

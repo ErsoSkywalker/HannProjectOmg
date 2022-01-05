@@ -9,21 +9,19 @@ using System.Data;
 
 namespace HannProjectOmg.AdministradorThings
 {
-    public partial class Inspector : System.Web.UI.Page
+    public partial class Region : System.Web.UI.Page
     {
-        
-
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HannApp.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
-                if(Request.QueryString == null || Request.QueryString.Keys.Count == 0)
+                if (Request.QueryString == null || Request.QueryString.Keys.Count == 0)
                 {
 
                     btnUpdate.Visible = false;
-                    
+
                 }
                 else
                 {
@@ -31,9 +29,9 @@ namespace HannProjectOmg.AdministradorThings
                     btnInsert.Visible = false;
                 }
 
-                
+
             }
-            
+
         }
 
         public void displayData()
@@ -50,8 +48,7 @@ namespace HannProjectOmg.AdministradorThings
             SqlCommand cmd = con.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select [User], [Password], Nombre, Apellido from Usuarios where idUsuario = "+ Request.QueryString["idUsuario"] +";";
+            cmd.CommandText = "Select Nombre_Region from Regiones where idRegion = " + Request.QueryString["idRegion"] + ";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -60,23 +57,20 @@ namespace HannProjectOmg.AdministradorThings
                 while (reader.Read())
                 {
 
-                    txtUser.Text = reader.GetString(0);
-                    txtPassword.Text = reader.GetString(1);
-                    txtNombre.Text = reader.GetString(2);
-                    txtApellido.Text = reader.GetString(3);
+                    txtRegion.Text = reader.GetString(0);
 
                 }
             }
             else
             {
-                Response.Redirect("/AdministradorThings/GestionarInspectores");
+                Response.Redirect("/AdministradorThings/GestionarRegiones");
             }
 
             con.Close();
 
         }
 
-        
+
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -86,17 +80,17 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '"+ txtPassword.Text.Trim()+"', '"+ txtNombre.Text.Trim() +"', '"+ txtApellido.Text.Trim() +"' ;";
+                cmd.CommandText = "UPDATE Regiones SET Nombre_Region = '" + txtRegion.Text.Trim() + "' where idRegion = " + Request.QueryString["idRegion"] + ";";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                Response.Redirect("/AdministradorThings/GestionarInspectores");
+                Response.Redirect("/AdministradorThings/GestionarRegiones");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lblError.Text = ex.Message;
             }
-            
+
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
@@ -106,11 +100,11 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 1 ;";
+                cmd.CommandText = "EXEC [InsertNewRegion] '" + txtRegion.Text.Trim() + "';";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                Response.Redirect("/AdministradorThings/GestionarInspectores");
+                Response.Redirect("/AdministradorThings/GestionarRegiones");
             }
             catch (Exception ex)
             {

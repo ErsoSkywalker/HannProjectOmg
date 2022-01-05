@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarInspectores.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarInspectores" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarSupervisores.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarSupervisores" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Gestionar Inspectores :D</h2>
 
-    <a href="/AdministradorThings/Inspector" class="btn btn-info btn-lg">Agregar</a>
+
+    <h2>Gestionar Supervisores :D</h2>
+
+    <a href="/AdministradorThings/Supervisor" class="btn btn-info btn-lg">Agregar</a>
 
     <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idUsuario"
                 ShowHeaderWhenEmpty="true">
@@ -26,7 +28,7 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     
-                    <a href='/AdministradorThings/Inspector?idUsuario=<%# Eval("idUsuario") %>' class="btn btn-info btn-lg">Editar</a>
+                    <a href='/AdministradorThings/Supervisor?idUsuario=<%# Eval("idUsuario") %>' class="btn btn-info btn-lg">Editar</a>
                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-lg btn-danger" CommandName="Delete" ToolTip="Delete" />
 
                 </ItemTemplate>

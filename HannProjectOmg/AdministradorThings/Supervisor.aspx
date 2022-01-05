@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inspector.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.Inspector" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Supervisor.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.Supervisor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
 
-    <h1>Gestiona al Inspector</h1>
+    <h1>Gestiona al Supervisor</h1>
 
     <asp:Label ID="lblUser" runat="server" Text="Usuario" ></asp:Label>
     <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
@@ -19,4 +18,5 @@
     <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
     <asp:Button ID="btnUpdate" runat="server" Text="Actualizar" OnClick="btnUpdate_Click" />
     <asp:Button ID="btnInsert" runat="server" Text="Agregar" OnClick="btnInsert_Click" />
+
 </asp:Content>
