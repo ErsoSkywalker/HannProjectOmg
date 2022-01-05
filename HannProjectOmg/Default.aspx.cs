@@ -68,7 +68,7 @@ namespace HannProjectOmg
               } 
           }
           else {
-                  ((Label)Formulario.FindControl("lblSalida")).Text = "No hay coincidencias para esas credenciales bruh uwu";
+                  ((Label)Formulario.FindControl("lblSalida")).Text = "No hay coincidencias para esas credenciales";
           }
       }
   }

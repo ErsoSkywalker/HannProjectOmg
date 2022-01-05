@@ -65,7 +65,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - By Hannia Reyes</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Hannia Reyes</p>
             </footer>
         </div>
 

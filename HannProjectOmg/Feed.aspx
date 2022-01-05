@@ -2,14 +2,23 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1>Bienvenido al Himalaya</h1>
+     <div class="col">
+        <div class="row">
+           <h1>Bienvenido Inspector</h1>
+            <hr />
+            <a href="" class="btn btn-primary">Reportes</a>
+            <a href="" class="btn btn-primary">Generar Reportes</a>
+        </div>
+    </div>
 
-
-    <asp:Label ID="lblSessionEquisDe" runat="server" Text=""></asp:Label>
     
+    <div class="col">
+        <div class="row">
+            <asp:Label ID="lblSessionEquisDe" runat="server" Text=""></asp:Label>
+            <asp:GridView ID="grdUsuarios" runat="server"></asp:GridView>
+             <asp:Button ID="Button1" runat="server" Text="Button" />
+        </div>
+    </div>
     
-    <asp:GridView ID="grdUsuarios" runat="server"></asp:GridView>
-
-
 </asp:Content>
 

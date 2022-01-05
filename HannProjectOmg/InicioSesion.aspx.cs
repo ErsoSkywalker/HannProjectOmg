@@ -52,7 +52,7 @@ namespace HannProjectOmg
             }
             else
             {
-                Response.Write("<script>alert('No hay coincidencia para esas credenciales :D')</script>");
+                Response.Write("<script>alert('No hay coincidencia para esas credenciales')</script>");
             }
 
 
