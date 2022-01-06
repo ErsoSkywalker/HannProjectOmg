@@ -7,7 +7,7 @@
            <h1>Bienvenido Inspector</h1>
             <hr />
             <a href="" class="btn btn-primary">Reportes</a>
-            <a href="" class="btn btn-primary">Generar Reportes</a>
+            <a href="InspectorThings/GenerarReportes.aspx" class="btn btn-primary">Generar Reportes</a>
         </div>
     </div>
 

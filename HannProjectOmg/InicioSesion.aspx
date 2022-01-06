@@ -24,8 +24,8 @@
                         <div class="form-group">
                            <asp:Button class="btn btn-primary btn-block btn-lg" ID="InicioSesion" runat="server" Text="Iniciar Sesión" OnClick="InicioSesionButton"/>
                         </div>
-                          <!--<asp:Label ID="lblSalida" runat="server" style="color: #dc3545"></asp:Label>
-                        <div class="form-group">
+                          <asp:Label ID="lblSalida" runat="server" style="color: #dc3545"></asp:Label>
+                       <!-- <div class="form-group">
                            <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Sign Up" /></a>
                         </div>-->
                      </div>

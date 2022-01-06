@@ -9,15 +9,14 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
 
-  <body class="bg-light">
+  <body>
 
     <div class="container">
       <div class="py-5 text-center">
-        <!--<img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
         <h2>Generar Reporte</h2>
-        <!--<p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>-->
       </div>
 
+    <!--Selección de Region y Complejo -->
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -32,135 +31,185 @@
                 </select>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+               <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
+                <h5 class="mb-3 text-muted">Complejo</h5>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                  <option value="Selecciona una ciudad">Selecciona una cine</option>
+                </select>
               </div>
-              <span class="text-muted">$8</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
-            </li>
-          </ul>
-
-          <form class="card p-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Promo code">
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">Redeem</button>
-              </div>
-            </div>
-          </form>
         </div>
+
+          <!--Estatus-->
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Billing address</h4>
           <form class="needs-validation" novalidate>
             <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
+              <div class="col-md-8 mb-3">
+                <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Estatus</label>
+                 <br>
+                   <div class="col-lg-6">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Inspeccionado
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        En Proceso
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        No Inspeccionado 
+                      </li>
+                    </ul>
+                  </div><!-- /.col-lg-6 -->
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="username">Username</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">@</span>
+                <!--Instalaciones-->
+                <div class="col-md-6 order-md-1">
+                     <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Instalaciones</label>
+                          <br>
+                          <select class="form-control">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                     </div>
                 </div>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Your username is required.
-                </div>
-              </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                <!--Salas-->
+                 <div class="col-md-8 mb-3">
+                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Salas</label>
+                    <br>
+                       <div class="col-lg-6">
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Bien
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Regular
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Mal 
+                          </li>
+                        </ul>
+                      </div><!-- /.col-lg-6 -->
               </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
+                
+                <!--Personal-->
+                <div class="col-md-8 mb-3">
+                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Personal</label>
+                    <br>
+                       <div class="col-lg-6">
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Suficiente
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Regular
+                          </li>
+                          <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Insuficiente 
+                          </li>
+                        </ul>
+                      </div><!-- /.col-lg-6 -->
               </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
+                <!--Servicio-->
+                 <div class="col-md-8 mb-3">
+                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Servicio</label>
+                    <br>
+                   <div class="col-lg-6">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Suficiente
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Regular
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Insuficiente 
+                      </li>
+                    </ul>
+                  </div><!-- /.col-lg-6 -->
+              </div>
 
-            <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="country">Country</label>
-                <select class="custom-select d-block w-100" id="country" required>
-                  <option value="">Choose...</option>
-                  <option>United States</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid country.
-                </div>
+                <!--Sanidad-->
+                 <div class="col-md-8 mb-3">
+                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Sanidad</label>
+                    <br>
+                   <div class="col-lg-6">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Suficiente
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Regular
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                        Insuficiente 
+                      </li>
+                    </ul>
+                  </div><!-- /.col-lg-6 -->
               </div>
-              <div class="col-md-4 mb-3">
-                <label for="state">State</label>
-                <select class="custom-select d-block w-100" id="state" required>
-                  <option value="">Choose...</option>
-                  <option>California</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please provide a valid state.
+
+                 <!--Taquilla-->
+               <div class="col-md-6 order-md-1">
+                     <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Taquilla</label>
+                          <br>
+                          <select class="form-control">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                     </div>
+
+                   <!--Fecha-->
+                    <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Fecha</label>
+                          <br>
+                          <select class="form-control">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                     </div>
                 </div>
+
+              
+
+                <!-- Textarea-->
+                 <div class="col-md-10 mb-1">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Observaciones</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                  <!-- /.col-md-10 mb-3 -->
               </div>
-              <div class="col-md-3 mb-3">
-                <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
-                <div class="invalid-feedback">
-                  Zip code required.
-                </div>
-              </div>
-            </div>
-            <hr class="mb-4">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="same-address">
-              <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="save-info">
-              <label class="custom-control-label" for="save-info">Save this information for next time</label>
-            </div>
-            <hr class="mb-4">
+
+              
 
             <h4 class="mb-3">Payment</h4>
 
@@ -212,19 +261,11 @@
               </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Registrar</button>
           </form>
         </div>
       </div>
 
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2017-2018 Company Name</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
     </div>
 
     <!-- Bootstrap core JavaScript
