@@ -45,222 +45,142 @@
         <div class="col-md-8 order-md-1">
           <form class="needs-validation" novalidate>
             <div class="row">
-              <div class="col-md-8 mb-3">
-                <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Estatus</label>
-                 <br>
-                   <div class="col-lg-6">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Inspeccionado
-                      </li>
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        En Proceso
-                      </li>
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        No Inspeccionado 
-                      </li>
-                    </ul>
-                  </div><!-- /.col-lg-6 -->
-              </div>
+           
 
-                <!--Instalaciones-->
-                <div class="col-md-6 order-md-1">
-                     <div class="col-md-8 mb-3">
+        <!--Instalaciones-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Instalaciones</label>
                           <br>
                           <select class="form-control">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
                         </select>
                      </div>
-                </div>
-
-                <!--Salas-->
-                 <div class="col-md-8 mb-3">
-                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Salas</label>
-                    <br>
-                       <div class="col-lg-6">
-                        <ul class="list-group">
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Bien
-                          </li>
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Regular
-                          </li>
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Mal 
-                          </li>
-                        </ul>
-                      </div><!-- /.col-lg-6 -->
               </div>
+            </div>
 
+
+        <!--Salas-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Salas</label>
+                          <br>
+                          <select class="form-control">
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
+                        </select>
+                     </div>
+              </div>
+            </div>
+
+               <!--Personal-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Personal</label>
+                          <br>
+                          <select class="form-control">
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
+                        </select>
+                     </div>
+              </div>
+            </div>
                 
-                <!--Personal-->
-                <div class="col-md-8 mb-3">
-                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Personal</label>
-                    <br>
-                       <div class="col-lg-6">
-                        <ul class="list-group">
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Suficiente
-                          </li>
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Regular
-                          </li>
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Insuficiente 
-                          </li>
-                        </ul>
-                      </div><!-- /.col-lg-6 -->
+            <!--Servicio-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Servicio</label>
+                          <br>
+                          <select class="form-control">
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
+                        </select>
+                     </div>
               </div>
+            </div>
 
-                <!--Servicio-->
-                 <div class="col-md-8 mb-3">
-                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Servicio</label>
-                    <br>
-                   <div class="col-lg-6">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Suficiente
-                      </li>
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Regular
-                      </li>
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Insuficiente 
-                      </li>
-                    </ul>
-                  </div><!-- /.col-lg-6 -->
+              <!--Insumos-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Insumos</label>
+                          <br>
+                          <select class="form-control">
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
+                        </select>
+                     </div>
               </div>
+            </div>
 
-                <!--Sanidad-->
-                 <div class="col-md-8 mb-3">
-                    <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Sanidad</label>
-                    <br>
-                   <div class="col-lg-6">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Suficiente
-                      </li>
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Regular
-                      </li>
-                      <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Insuficiente 
-                      </li>
-                    </ul>
-                  </div><!-- /.col-lg-6 -->
+              <!--Dulceria-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Dulceria</label>
+                          <br>
+                          <select class="form-control">
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
+                        </select>
+                     </div>
               </div>
+            </div>
 
-                 <!--Taquilla-->
-               <div class="col-md-6 order-md-1">
-                     <div class="col-md-8 mb-3">
+
+            <!--Servicio-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
+                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Sanidad</label>
+                          <br>
+                          <select class="form-control">
+                          <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
+                        </select>
+                     </div>
+              </div>
+            </div>
+
+             <!--Taquilla-->
+            <div class="row">
+              <div class="col-md-8 mb-3">
+               <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Taquilla</label>
                           <br>
                           <select class="form-control">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                         <option>Buen estado</option>
+                          <option>Regular</option>
+                          <option>Mal estado</option>
                         </select>
                      </div>
-
-                   <!--Fecha-->
-                    <div class="col-md-8 mb-3">
-                         <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Fecha</label>
-                          <br>
-                          <select class="form-control">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                     </div>
-                </div>
-
+              </div>
+            </div>
               
 
-                <!-- Textarea-->
+                <!--Textarea
                  <div class="col-md-10 mb-1">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Observaciones</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
-                  <!-- /.col-md-10 mb-3 -->
-              </div>
+              </div>-->
 
               
-
-            <h4 class="mb-3">Payment</h4>
-
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="paypal">Paypal</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                <small class="text-muted">Full name as displayed on card</small>
-                <div class="invalid-feedback">
-                  Name on card is required
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                <div class="invalid-feedback">
-                  Expiration date required
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                <div class="invalid-feedback">
-                  Security code required
-                </div>
-              </div>
-            </div>
             <hr class="mb-4">
+
             <button class="btn btn-primary btn-lg btn-block" type="submit">Registrar</button>
           </form>
         </div>

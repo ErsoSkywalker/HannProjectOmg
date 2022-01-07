@@ -4,6 +4,6 @@
 
     <a href="/AdministradorThings/GestionarInspectores.aspx" class="btn btn-primary">Gestionar Inspectores</a>
     <a href="/AdministradorThings/GestionarSupervisores.aspx" class="btn btn-primary">Gestionar Supervisores</a>
-    <a href="/AdministradorThings/GestionarInspectores.aspx" class="btn btn-primary">Gestionar Regiones</a>
-    <a href="/AdministradorThings/GestionarInspectores.aspx" class="btn btn-primary">Gestionar Complejos</a>
+    <a href="/AdministradorThings/GestionarRegiones.aspx" class="btn btn-primary">Gestionar Regiones</a>
+    <a href="/AdministradorThings/GestionarComplejos.aspx" class="btn btn-primary">Gestionar Complejos</a>
 </asp:Content>

@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarRegiones.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarRegiones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Gestionar Regiones :D</h2>
-
-    <a href="/AdministradorThings/Region" class="btn btn-info btn-lg">Agregar</a>
+    <h2>Gestionar Regiones</h2>
 
     <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idRegion"
                 ShowHeaderWhenEmpty="true">
@@ -30,5 +28,13 @@
 
         </Columns>
     </asp:GridView>
+        
+     <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+             <a href="/AdministradorThings/Region" class="btn btn-info">Agregar</a>
+            </div>
+          </div>        
+    </div>
 
 </asp:Content>

@@ -38,6 +38,7 @@
           <div class="row justify-content-md-center">
             <div class="col col-lg-2">
              <a href="/AdministradorThings/Inspector" class="btn btn-info">Agregar</a>
+             <a href="/AdministradorThings/Inspector" class="btn btn-info">Restaurar</a>
             </div>
           </div>        
     </div>

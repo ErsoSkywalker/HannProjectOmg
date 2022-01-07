@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarComplejos.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarComplejos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Gestionar Complejos :D</h2>
+    <h2>Gestionar Complejos</h2>
 
     <a href="/AdministradorThings/Complejo" class="btn btn-info btn-lg">Agregar</a>
 

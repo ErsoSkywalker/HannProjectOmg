@@ -3,11 +3,11 @@
 
     <h1>Gestiona Region</h1>
 
-    <asp:Label ID="lblRegion" runat="server" Text="Region" ></asp:Label>
-    <asp:TextBox ID="txtRegion" runat="server"></asp:TextBox>
+    <asp:Label ID="lblRegion" runat="server" CssClass="control-label" Text="Region" ></asp:Label>
+    <asp:TextBox ID="txtRegion"  CssClass="form-control" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-    <asp:Button ID="btnUpdate" runat="server" Text="Actualizar" OnClick="btnUpdate_Click" />
-    <asp:Button ID="btnInsert" runat="server" Text="Agregar" OnClick="btnInsert_Click" />
+    <asp:Button ID="btnUpdate" CssClass="btn btn-primary" runat="server" Text="Actualizar" OnClick="btnUpdate_Click" />
+    <asp:Button ID="btnInsert" CssClass="btn btn-primary" runat="server" Text="Agregar" OnClick="btnInsert_Click" />
 
 </asp:Content>

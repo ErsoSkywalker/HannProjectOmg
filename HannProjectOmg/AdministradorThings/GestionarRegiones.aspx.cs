@@ -23,7 +23,6 @@ namespace HannProjectOmg.AdministradorThings
         }
 
 
-
         public void displayData()
         {
 
@@ -38,7 +37,6 @@ namespace HannProjectOmg.AdministradorThings
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "Select * from Regiones;";
             cmd.ExecuteNonQuery();
-
 
 
             DataTable tbl = new DataTable();
@@ -67,7 +65,7 @@ namespace HannProjectOmg.AdministradorThings
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Auxilio uwu");
+                Console.WriteLine("Auxilio");
             }
         }
     }
