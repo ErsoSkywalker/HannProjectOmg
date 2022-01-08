@@ -15,6 +15,13 @@
     <asp:Label ID="lblApellido" runat="server" CssClass="control-label" Text="Apellido"></asp:Label>
     <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
     <br />
+
+    <asp:Label ID="lblEstatus" runat="server" CssClass="control-label" Text="Estatus"></asp:Label>
+    <asp:DropDownList ID="drpStatus" runat="server">
+    </asp:DropDownList>
+    
+    <br />
+
     <asp:Label ID="lblError" runat="server" CssClass="control-label" Text=""></asp:Label>
     <asp:Button ID="btnUpdate"  CssClass="btn btn-primary" runat="server" Text="Actualizar" OnClick="btnUpdate_Click" />
     <asp:Button ID="btnInsert"  CssClass="btn btn-primary" runat="server" Text="Agregar" OnClick="btnInsert_Click" />

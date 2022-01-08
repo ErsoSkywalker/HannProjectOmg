@@ -105,6 +105,7 @@
     <Content Include="About.aspx" />
     <Content Include="AdministradorThings\Admin.aspx" />
     <Content Include="AdministradorThings\Complejo.aspx" />
+    <Content Include="AdministradorThings\Complejos_Inspector.aspx" />
     <Content Include="AdministradorThings\GestionarComplejos.aspx" />
     <Content Include="AdministradorThings\GestionarInspectores.aspx" />
     <Content Include="AdministradorThings\GestionarRegiones.aspx" />
@@ -188,6 +189,13 @@
     </Compile>
     <Compile Include="AdministradorThings\Complejo.aspx.designer.cs">
       <DependentUpon>Complejo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorThings\Complejos_Inspector.aspx.cs">
+      <DependentUpon>Complejos_Inspector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorThings\Complejos_Inspector.aspx.designer.cs">
+      <DependentUpon>Complejos_Inspector.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdministradorThings\GestionarComplejos.aspx.cs">
       <DependentUpon>GestionarComplejos.aspx</DependentUpon>

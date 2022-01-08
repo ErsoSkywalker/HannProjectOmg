@@ -24,6 +24,11 @@
                     <asp:Label runat="server" Text='<%# Eval("Apellido") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+            <asp:TemplateField HeaderText="Status">
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("estatus_bueno") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField>
                 <ItemTemplate>
                     

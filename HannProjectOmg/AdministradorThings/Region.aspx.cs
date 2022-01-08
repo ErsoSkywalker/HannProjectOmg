@@ -17,11 +17,15 @@ namespace HannProjectOmg.AdministradorThings
 
             if (!IsPostBack)
             {
+
+                drpStatus.Items.Add(new ListItem("Activo", "1"));
+                drpStatus.Items.Add(new ListItem("Eliminado", "2"));
                 if (Request.QueryString == null || Request.QueryString.Keys.Count == 0)
                 {
 
                     btnUpdate.Visible = false;
-
+                    drpStatus.Visible = false;
+                    lblEstatus.Visible = false;
                 }
                 else
                 {
@@ -48,7 +52,7 @@ namespace HannProjectOmg.AdministradorThings
             SqlCommand cmd = con.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select Nombre_Region from Regiones where idRegion = " + Request.QueryString["idRegion"] + ";";
+            cmd.CommandText = "Select Nombre_Region, estatus from Regiones where idRegion = " + Request.QueryString["idRegion"] + ";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -58,6 +62,7 @@ namespace HannProjectOmg.AdministradorThings
                 {
 
                     txtRegion.Text = reader.GetString(0);
+                    drpStatus.SelectedValue = Convert.ToString(reader.GetInt32(1));
 
                 }
             }
@@ -80,7 +85,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "UPDATE Regiones SET Nombre_Region = '" + txtRegion.Text.Trim() + "' where idRegion = " + Request.QueryString["idRegion"] + ";";
+                cmd.CommandText = "UPDATE Regiones SET Nombre_Region = '" + txtRegion.Text.Trim() + "', estatus = "+drpStatus.SelectedValue+" where idRegion = " + Request.QueryString["idRegion"] + ";";
                 cmd.ExecuteNonQuery();
 
                 con.Close();

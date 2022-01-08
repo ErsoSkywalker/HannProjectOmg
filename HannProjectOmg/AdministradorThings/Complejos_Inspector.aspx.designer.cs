@@ -11,44 +11,26 @@ namespace HannProjectOmg.AdministradorThings
 {
 
 
-    public partial class Region
+    public partial class Complejos_Inspector
     {
 
         /// <summary>
-        /// Control lblRegion.
+        /// Control drpComplejos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegion;
+        protected global::System.Web.UI.WebControls.DropDownList drpComplejos;
 
         /// <summary>
-        /// Control txtRegion.
+        /// Control btnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegion;
-
-        /// <summary>
-        /// Control lblEstatus.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstatus;
-
-        /// <summary>
-        /// Control drpStatus.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpStatus;
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
 
         /// <summary>
         /// Control lblError.
@@ -60,21 +42,12 @@ namespace HannProjectOmg.AdministradorThings
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// Control btnUpdate.
+        /// Control grdInspectores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
-
-        /// <summary>
-        /// Control btnInsert.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsert;
+        protected global::System.Web.UI.WebControls.GridView grdInspectores;
     }
 }

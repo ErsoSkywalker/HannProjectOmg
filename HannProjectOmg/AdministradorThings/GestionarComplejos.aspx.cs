@@ -37,7 +37,7 @@ namespace HannProjectOmg.AdministradorThings
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select idComplejo, Complejo, Nombre_Region from Complejos a INNER JOIN Regiones b ON(a.idRegion = b.idRegion); ";
+            cmd.CommandText = "Select idComplejo, Complejo, Nombre_Region, CASE WHEN a.estatus = '1' THEN 'ACTIVO' WHEN a.estatus = '2' THEN 'INACTIVO' END as estatus_bueno from Complejos a INNER JOIN Regiones b ON(a.idRegion = b.idRegion); ";
             cmd.ExecuteNonQuery();
 
 
@@ -59,7 +59,7 @@ namespace HannProjectOmg.AdministradorThings
                 using (con)
                 {
                     con.Open();
-                    string query = "DELETE FROM Complejos WHERE idComplejo = @id";
+                    string query = "UPDATE Complejos set estatus = 2 WHERE idComplejo = @id";
                     SqlCommand sqlCmd = new SqlCommand(query, con);
                     sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(grdInspectores.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();

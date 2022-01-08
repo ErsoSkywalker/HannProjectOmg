@@ -17,10 +17,17 @@ namespace HannProjectOmg.AdministradorThings
 
             if (!IsPostBack)
             {
+
+                drpStatus.Items.Add(new ListItem("Activo", "1"));
+                drpStatus.Items.Add(new ListItem("Eliminado", "2"));
+
                 if (Request.QueryString == null || Request.QueryString.Keys.Count == 0)
                 {
 
                     btnUpdate.Visible = false;
+
+                    drpStatus.Visible = false;
+                    lblEstatus.Visible = false;
 
                 }
                 else
@@ -33,6 +40,8 @@ namespace HannProjectOmg.AdministradorThings
             }
 
         }
+
+
 
         public void displayData()
         {
@@ -49,7 +58,7 @@ namespace HannProjectOmg.AdministradorThings
 
             cmd.CommandType = CommandType.Text;
             //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select [User], [Password], Nombre, Apellido from Usuarios where idUsuario = " + Request.QueryString["idUsuario"] + ";";
+            cmd.CommandText = "Select [User], [Password], Nombre, Apellido, estatus from Usuarios where idUsuario = " + Request.QueryString["idUsuario"] + ";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -62,6 +71,7 @@ namespace HannProjectOmg.AdministradorThings
                     txtPassword.Text = reader.GetString(1);
                     txtNombre.Text = reader.GetString(2);
                     txtApellido.Text = reader.GetString(3);
+                    drpStatus.SelectedValue = Convert.ToString(reader.GetInt32(4));
 
                 }
             }
@@ -84,7 +94,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "' ;";
+                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', " + drpStatus.SelectedValue + ", NULL ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();

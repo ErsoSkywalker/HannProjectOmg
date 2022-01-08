@@ -18,12 +18,15 @@ namespace HannProjectOmg.AdministradorThings
         {
             if (!IsPostBack)
             {
+                drpStatus.Items.Add(new ListItem("Activo", "1"));
+                drpStatus.Items.Add(new ListItem("Eliminado", "2"));
                 displayComboData();
                 if (Request.QueryString == null || Request.QueryString.Keys.Count == 0)
                 {
 
                     btnUpdate.Visible = false;
-
+                    drpStatus.Visible = false;
+                    lblEstatus.Visible = false;
                 }
                 else
                 {
@@ -49,7 +52,7 @@ namespace HannProjectOmg.AdministradorThings
 
             cmd.CommandType = CommandType.Text;
             //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select idComplejo, Complejo, idRegion from Complejos where idComplejo = " + Request.QueryString["idComplejo"] + ";";
+            cmd.CommandText = "Select idComplejo, Complejo, idRegion, estatus from Complejos where idComplejo = " + Request.QueryString["idComplejo"] + ";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -60,6 +63,7 @@ namespace HannProjectOmg.AdministradorThings
 
                     txtComplejo.Text = reader.GetString(1);
                     drpRegion.SelectedValue = Convert.ToString(reader.GetInt32(2));
+                    drpStatus.SelectedValue = Convert.ToString(reader.GetInt32(3));
 
                 }
             }
@@ -117,7 +121,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Update Complejos SET Complejo = '" + txtComplejo.Text.Trim() + "', idRegion = " + drpRegion.SelectedValue.Trim() +" where idComplejo = "+ Request.QueryString["idComplejo"] + ";";
+                cmd.CommandText = "Update Complejos SET Complejo = '" + txtComplejo.Text.Trim() + "', idRegion = " + drpRegion.SelectedValue.Trim() +", estatus = "+drpStatus.SelectedValue+" where idComplejo = "+ Request.QueryString["idComplejo"] + ";";
                 cmd.ExecuteNonQuery();
 
                 con.Close();

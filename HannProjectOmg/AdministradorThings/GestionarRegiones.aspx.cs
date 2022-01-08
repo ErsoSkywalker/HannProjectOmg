@@ -35,7 +35,7 @@ namespace HannProjectOmg.AdministradorThings
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * from Regiones;";
+            cmd.CommandText = "Select *, CASE WHEN estatus = '1' THEN 'ACTIVO' WHEN estatus = '2' THEN 'INACTIVO' END as estatus_bueno from Regiones;";
             cmd.ExecuteNonQuery();
 
 
@@ -56,7 +56,7 @@ namespace HannProjectOmg.AdministradorThings
                 using (con)
                 {
                     con.Open();
-                    string query = "DELETE FROM Regiones WHERE idRegion = @id";
+                    string query = "UPDATE Regiones set estatus = 2 WHERE idRegion = @id";
                     SqlCommand sqlCmd = new SqlCommand(query, con);
                     sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(grdInspectores.DataKeys[e.RowIndex].Value.ToString()));
                     sqlCmd.ExecuteNonQuery();

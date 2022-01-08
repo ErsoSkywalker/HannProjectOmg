@@ -24,6 +24,11 @@
                     <asp:Label runat="server" Text='<%# Eval("Nombre_Region") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+             <asp:TemplateField HeaderText="Status">
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("estatus_bueno") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField>
                 <ItemTemplate>
                     
