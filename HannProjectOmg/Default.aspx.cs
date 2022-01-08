@@ -51,7 +51,7 @@ namespace HannProjectOmg
                   switch (reader.GetInt32(1))
                   {
                       case 1:
-                          Response.Redirect("Feed.aspx");
+                          Response.Redirect("/InspectorThings/Feed.aspx");
                           break;
 
                       case 2:

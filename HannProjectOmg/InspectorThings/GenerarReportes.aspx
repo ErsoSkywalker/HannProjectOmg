@@ -26,17 +26,14 @@
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h5 class="mb-3 text-muted">Región</h5>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                  <option value="Selecciona una ciudad">Selecciona una ciudad</option>
-                </select>
+                 
+                <asp:DropDownList ID="drpRegion" AutoPostBack="true" CssClass="form-select form-select-sm" runat="server" OnSelectedIndexChanged="drpRegion_SelectedIndexChanged"></asp:DropDownList>
               </div>
             </li>
                <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h5 class="mb-3 text-muted">Complejo</h5>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                  <option value="Selecciona una ciudad">Selecciona una cine</option>
-                </select>
+                <asp:DropDownList ID="drpComplejo" CssClass="form-select form-select-sm" runat="server"></asp:DropDownList>
               </div>
             </li>
         </div>
@@ -53,11 +50,8 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Instalaciones</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpInstalaciones" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpInstalaciones_SelectedIndexChanged"></asp:DropDownList>
+                            <asp:TextBox ID="txtInstalaciones" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -69,11 +63,8 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Salas</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpSalas" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpSalas_SelectedIndexChanged"></asp:DropDownList>
+                            <asp:TextBox ID="txtSalas" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -84,11 +75,10 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Personal</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+
+                   
+                          <asp:DropDownList ID="drpPersonal" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpPersonal_SelectedIndexChanged"></asp:DropDownList>
+                   <asp:TextBox ID="txtPersonal" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -99,11 +89,8 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Servicio</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpServicio" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpServicio_SelectedIndexChanged"></asp:DropDownList>
+                   <asp:TextBox ID="txtServicio" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -114,11 +101,8 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Insumos</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpInsumos" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpInsumos_SelectedIndexChanged"></asp:DropDownList>
+                   <asp:TextBox ID="txtInsumos" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -129,11 +113,8 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Dulceria</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpDulceria" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpDulceria_SelectedIndexChanged"></asp:DropDownList>
+                   <asp:TextBox ID="txtDulceria" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -145,11 +126,8 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Sanidad</label>
                           <br>
-                          <select class="form-control">
-                          <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpSanidad" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpSanidad_SelectedIndexChanged"></asp:DropDownList>
+                   <asp:TextBox ID="txtSanidad" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
@@ -160,28 +138,19 @@
                <div class="col-md-8 mb-3">
                          <label for="firstName" style="padding-left:1.5rem; margin-top:1rem">Taquilla</label>
                           <br>
-                          <select class="form-control">
-                         <option>Buen estado</option>
-                          <option>Regular</option>
-                          <option>Mal estado</option>
-                        </select>
+                          <asp:DropDownList ID="drpTaquilla" AutoPostBack="true" CssClass="form-control" runat="server" OnSelectedIndexChanged="drpTaquilla_SelectedIndexChanged"></asp:DropDownList>
+                   <asp:TextBox ID="txtTaquilla" runat="server"></asp:TextBox>
                      </div>
               </div>
             </div>
               
 
-                <!--Textarea
-                 <div class="col-md-10 mb-1">
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Observaciones</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
-              </div>-->
+                
 
               
             <hr class="mb-4">
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Registrar</button>
+                <asp:Button ID="btnRegistrar" CssClass="btn btn-primary btn-lg btn-block" runat="server" Text="Enviar" OnClick="btnRegistrar_Click" />
+                <asp:Label ID="lblError" runat="server"></asp:Label>
           </form>
         </div>
       </div>

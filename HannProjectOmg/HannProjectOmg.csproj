@@ -125,7 +125,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="Feed.aspx" />
+    <Content Include="InspectorThings\Feed.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -139,7 +139,6 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="InspectorThings\GenerarReportes.aspx" />
-    <Content Include="InspectorThings\Reportes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -269,11 +268,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Feed.aspx.cs">
+    <Compile Include="InspectorThings\Feed.aspx.cs">
       <DependentUpon>Feed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Feed.aspx.designer.cs">
+    <Compile Include="InspectorThings\Feed.aspx.designer.cs">
       <DependentUpon>Feed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -292,13 +291,6 @@
     </Compile>
     <Compile Include="InspectorThings\GenerarReportes.aspx.designer.cs">
       <DependentUpon>GenerarReportes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="InspectorThings\Reportes.aspx.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InspectorThings\Reportes.aspx.designer.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

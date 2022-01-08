@@ -7,11 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HannProjectOmg.InspectorThings
+namespace HannProjectOmg
 {
 
 
-    public partial class Reportes
+    public partial class Feed
     {
+
+        /// <summary>
+        /// Control grdInspectores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdInspectores;
     }
 }
