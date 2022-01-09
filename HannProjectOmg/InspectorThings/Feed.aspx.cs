@@ -35,7 +35,7 @@ namespace HannProjectOmg
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select r.idreporte,  g.Nombre_Region, c.Complejo, r.Fecha, CASE WHEN r.estatusRevision = '1' THEN 'APROBADO' WHEN r.estatusRevision = '2' THEN 'REPROBADO' WHEN r.estatusRevision = '0' THEN 'SIN REVISION' WHEN r.estatusRevision = '3' THEN 'INACTIVO' END as estatus_bueno from reporte r INNER JOIN Regiones g ON (r.idregion = g.idRegion) INNER JOIN Complejos c ON (c.idComplejo = r.idComplejo) where r.idUsuario = "+ Session["idUsuario"] + ";";
+            cmd.CommandText = "Select r.idreporte,  g.Nombre_Region, c.Complejo, r.Fecha, CASE WHEN r.estatusRevision = '1' THEN 'APROBADO' WHEN r.estatusRevision = '2' THEN 'REPROBADO' WHEN r.estatusRevision = '3' THEN 'SIN REVISION' WHEN r.estatusRevision = '4' THEN 'INACTIVO' END as estatus_bueno from reporte r INNER JOIN Regiones g ON (r.idregion = g.idRegion) INNER JOIN Complejos c ON (c.idComplejo = r.idComplejo) where r.idUsuario = "+ Session["idUsuario"] + ";";
             cmd.ExecuteNonQuery();
 
 
@@ -52,22 +52,65 @@ namespace HannProjectOmg
 
         protected void grdInspectores_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            try
+
+            lblError.Text = "";
+            int supervision = 0;
+            if (con.State == ConnectionState.Open)
             {
-                using (con)
+                con.Close();
+            }
+
+            con.Open();
+
+            ContentPlaceHolder Formulario = (ContentPlaceHolder)this.Master.FindControl("MainContent");
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            //Request.QueryString["idUsuario"]
+            cmd.CommandText = "Select estatusRevision from reporte where idreporte = " + grdInspectores.DataKeys[e.RowIndex].Value.ToString() + ";";
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
                 {
-                    con.Open();
-                    string query = "UPDATE reporte set estatusRevision = 3 WHERE idReporte = @id";
-                    SqlCommand sqlCmd = new SqlCommand(query, con);
-                    sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(grdInspectores.DataKeys[e.RowIndex].Value.ToString()));
-                    sqlCmd.ExecuteNonQuery();
-                    displayData();
+
+                    supervision = reader.GetInt32(0);
+
                 }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Auxilio uwu");
+                Response.Redirect("/AdministradorThings/GestionarInspectores");
             }
+
+            con.Close();
+            if(supervision == 1 || supervision == 2)
+            {
+                lblError.Text = "No puedes eliminar un reporte APROBADO/REPROBADO.";
+            }
+            else
+            {
+                try
+                {
+                    using (con)
+                    {
+                        con.Open();
+                        string query = "UPDATE reporte set estatusRevision = 4 WHERE idReporte = @id";
+                        SqlCommand sqlCmd = new SqlCommand(query, con);
+                        sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(grdInspectores.DataKeys[e.RowIndex].Value.ToString()));
+                        sqlCmd.ExecuteNonQuery();
+                        displayData();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Auxilio uwu");
+                }
+                
+            }
+            
         }
 
     }

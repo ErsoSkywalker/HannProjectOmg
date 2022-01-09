@@ -7,30 +7,30 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HannProjectOmg.InspectorThings
+namespace HannProjectOmg.SupervisorThings
 {
 
 
-    public partial class GenerarReportes
+    public partial class ChecarReportes
     {
 
         /// <summary>
-        /// Control drpRegion.
+        /// Control lblRegion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpRegion;
+        protected global::System.Web.UI.WebControls.Label lblRegion;
 
         /// <summary>
-        /// Control drpComplejo.
+        /// Control lblComplejo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpComplejo;
+        protected global::System.Web.UI.WebControls.Label lblComplejo;
 
         /// <summary>
         /// Control drpStatus.
@@ -40,6 +40,15 @@ namespace HannProjectOmg.InspectorThings
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drpStatus;
+
+        /// <summary>
+        /// Control btnChangeStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChangeStatus;
 
         /// <summary>
         /// Control drpInstalaciones.
@@ -184,24 +193,6 @@ namespace HannProjectOmg.InspectorThings
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTaquilla;
-
-        /// <summary>
-        /// Control btnRegistrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
-
-        /// <summary>
-        /// Control btnEditar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditar;
 
         /// <summary>
         /// Control lblError.

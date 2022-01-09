@@ -55,7 +55,7 @@ namespace HannProjectOmg
                           break;
 
                       case 2:
-                          Response.Redirect("Supervisor.aspx");
+                          Response.Redirect("/SupervisorThings/Feed.aspx");
                           break;
 
                       case 3:

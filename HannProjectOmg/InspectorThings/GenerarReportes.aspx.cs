@@ -14,8 +14,13 @@ namespace HannProjectOmg.InspectorThings
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HannApp.mdf;Integrated Security=True");
         // class="" aria-label=".form-select-sm example"
+
+        String globalRes = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
 
             if (!IsPostBack)
             {
@@ -25,7 +30,172 @@ namespace HannProjectOmg.InspectorThings
                 displayComboData();
                 displayCombos();
                 displayTextBoxes();
+                btnEditar.Visible = false;
+
+                if (Request.QueryString != null && Request.QueryString.Keys.Count != 0)
+                {
+                   globalRes =  displayEditValues();
+                   drpRegion_SelectedIndexChanged(globalRes, e);
+                    btnEditar.Visible = true;
+                    btnRegistrar.Visible = false;
+                    drpComplejo.Enabled = false;
+                }
+                else
+                {
+                    drpStatus.Items.Add(new ListItem("SIN REVISION", "3"));
+                    drpStatus.Enabled = false;
+                }
+
             }
+        }
+
+        public String displayEditValues()
+        {
+            String res = "";
+            drpRegion.Enabled = false;
+            drpComplejo.Enabled = false;
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+
+            con.Open();
+
+            ContentPlaceHolder Formulario = (ContentPlaceHolder)this.Master.FindControl("MainContent");
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            //Session["idUsuario"]
+            cmd.CommandText = "Select * from reporte where idreporte = " + Request.QueryString["idreporte"] + ";";
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+
+                    drpRegion.SelectedValue = Convert.ToString(reader.GetInt32(1));
+                    
+                    res = Convert.ToString(reader.GetInt32(20));
+
+                    drpInstalaciones.SelectedValue = Convert.ToString(reader.GetInt32(4));
+                    txtInstalaciones.Text = reader.GetString(5);
+
+                    int kekw = reader.GetInt32(3);
+                    if (reader.GetInt32(3) == 1 || reader.GetInt32(3) == 2)
+                    {
+                        drpStatus.Items.Add(new ListItem("APROBADO", "1"));
+                        drpStatus.Items.Add(new ListItem("REPROBADO", "2"));
+
+                        btnEditar.Visible = false;
+
+                        drpStatus.Enabled = false;
+
+                        drpInstalaciones.Enabled = false;
+                        txtInstalaciones.Enabled = false;
+
+                        drpSalas.Enabled = false;
+                        txtSalas.Enabled = false;
+
+                        drpPersonal.Enabled = false;
+                        txtPersonal.Enabled = false;
+
+                        drpServicio.Enabled = false;
+                        txtServicio.Enabled = false;
+
+                        drpInsumos.Enabled = false;
+                        txtInsumos.Enabled = false;
+
+                        drpDulceria.Enabled = false;
+                        txtDulceria.Enabled = false;
+
+                        drpSanidad.Enabled = false;
+                        txtSanidad.Enabled = false;
+
+                        drpTaquilla.Enabled = false;
+                        txtTaquilla.Enabled = false;
+                    }
+                    else
+                    {
+                        drpStatus.Items.Add(new ListItem("SIN REVISION", "3"));
+                        drpStatus.Items.Add(new ListItem("INACTIVO", "4"));
+
+                    }
+
+                    drpStatus.SelectedValue = Convert.ToString(reader.GetInt32(3));
+
+                    drpSalas.SelectedValue = Convert.ToString(reader.GetInt32(6));
+                    txtSalas.Text = reader.GetString(7);
+
+                    drpPersonal.SelectedValue = Convert.ToString(reader.GetInt32(8));
+                    txtPersonal.Text = reader.GetString(9);
+
+                    drpServicio.SelectedValue = Convert.ToString(reader.GetInt32(10));
+                    txtServicio.Text = reader.GetString(11);
+
+                    drpInsumos.SelectedValue = Convert.ToString(reader.GetInt32(12));
+                    txtInsumos.Text = reader.GetString(13);
+
+                    drpDulceria.SelectedValue = Convert.ToString(reader.GetInt32(14));
+                    txtDulceria.Text = reader.GetString(15);
+
+                    drpSanidad.SelectedValue = Convert.ToString(reader.GetInt32(16));
+                    txtSanidad.Text = reader.GetString(17);
+
+                    drpTaquilla.SelectedValue = Convert.ToString(reader.GetInt32(18));
+                    txtTaquilla.Text = reader.GetString(19);
+
+                }
+            }
+            else
+            {
+                Response.Redirect("/InspectorThings/Feed");
+            }
+
+            con.Close();
+
+            if (!txtInstalaciones.Text.Equals(""))
+            {
+                txtInstalaciones.Visible = true;
+            }
+
+            if (!txtSalas.Text.Equals(""))
+            {
+                txtSalas.Visible = true;
+            }
+
+            if (!txtPersonal.Text.Equals(""))
+            {
+                txtPersonal.Visible = true;
+            }
+
+            if (!txtServicio.Text.Equals(""))
+            {
+                txtServicio.Visible = true;
+            }
+
+            if (!txtInsumos.Text.Equals(""))
+            {
+                txtInsumos.Visible = true;
+            }
+
+            if (!txtDulceria.Text.Equals(""))
+            {
+                txtDulceria.Visible = true;
+            }
+
+            if (!txtSanidad.Text.Equals(""))
+            {
+                txtSanidad.Visible = true;
+            }
+
+            if (!txtTaquilla.Text.Equals(""))
+            {
+                txtTaquilla.Visible = true;
+            }
+            return res;
         }
 
         public void displayTextBoxes()
@@ -105,8 +275,8 @@ namespace HannProjectOmg.InspectorThings
             SqlCommand cmd = con.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select idRegion, Nombre_region from Regiones where estatus = 1;";
+            //Session["idUsuario"]
+            cmd.CommandText = "Select r.idRegion, r.Nombre_region from Regiones r INNER JOIN Complejos c ON (c.idRegion = r.idRegion) INNER JOIN relInspectoresComplejos rel ON (rel.idComplejo = c.idComplejo) where r.estatus = 1 AND rel.idInspector = " + Session["idUsuario"] + ";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -151,8 +321,8 @@ namespace HannProjectOmg.InspectorThings
                 SqlCommand cmd = con.CreateCommand();
 
                 cmd.CommandType = CommandType.Text;
-                //Request.QueryString["idUsuario"]
-                cmd.CommandText = "Select idComplejo, Complejo from Complejos where estatus = 1 AND idregion = " + drpRegion.SelectedValue + ";";
+                //Session["idUsuario"]
+                cmd.CommandText = "Select c.idComplejo, c.Complejo from Complejos c INNER JOIN relInspectoresComplejos r ON(r.idComplejo = c.idComplejo) where c.estatus = 1 AND r.idInspector = " + Session["idUsuario"] + " AND c.idRegion = " + drpRegion.SelectedValue + ";";
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -173,7 +343,17 @@ namespace HannProjectOmg.InspectorThings
 
                 con.Close();
             }
+
+            if (!globalRes.Equals(""))
+            {
+                drpComplejo.SelectedValue = globalRes;
+            }
             
+        }
+
+        public void fillProCombo()
+        {
+
         }
 
         protected void drpInstalaciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -323,6 +503,50 @@ namespace HannProjectOmg.InspectorThings
                 }
             }
             
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+            if (drpComplejo.SelectedValue.Equals("0") || drpComplejo.SelectedValue.Equals("0"))
+            {
+                lblError.Text = "Debes seleccionar un Cine / Región correctos";
+            }
+            else
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "UPDATE reporte set Instalaciones = " + drpInstalaciones.SelectedValue + 
+                        ", InstalacionesText = '" + txtInstalaciones.Text.Trim() + 
+                        "', Salas = " + drpSalas.SelectedValue + 
+                        ", SalasText = '" + txtSalas.Text.Trim() + 
+                        "', Personal = " + drpPersonal.SelectedValue + 
+                        ", PersonalText = '" + txtPersonal.Text.Trim() + 
+                        "', Servicio = " + drpServicio.SelectedValue + 
+                        ", ServicioText = '" + txtServicio.Text.Trim() + 
+                        "', Insumos = " + drpInsumos.SelectedValue + 
+                        ", InsumosText = '" + txtInsumos.Text.Trim() + 
+                        "', Dulceria = " + drpDulceria.SelectedValue + 
+                        ", DulceriaText = '" + txtDulceria.Text.Trim() + 
+                        "', Sanidad = " + drpSanidad.SelectedValue + 
+                        ", SanidadText = '" + txtSanidad.Text.Trim() + 
+                        "', Taquilla = " + drpTaquilla.SelectedValue + 
+                        ", TaquillaText = '" + txtTaquilla.Text.Trim() +
+                        "', estatusRevision = " + drpStatus.SelectedValue + 
+                        " where idreporte = " + Request.QueryString["idreporte"] + ";";
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+                    Response.Redirect("/InspectorThings/Feed");
+                }
+                catch (Exception ex)
+                {
+                    lblError.Text = ex.Message;
+                }
+            }
         }
     }
 

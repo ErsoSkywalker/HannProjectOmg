@@ -1,17 +1,16 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Feed.aspx.cs" Inherits="HannProjectOmg.Feed" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Feed.aspx.cs" Inherits="HannProjectOmg.SupervisorThings.Feed" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-     <div class="row">
+    <div class="row">
         <div class="col">
-           <h1>Bienvenido Inspector</h1>
+           <h1>Bienvenido Supervisor</h1>
             <hr />
-            <a href="/InspectorThings/GenerarReportes.aspx" class="btn btn-primary">Generar Reportes</a><asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
         </div>
     </div>
 
 
-   <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idreporte"
+   <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" DataKeyNames="idreporte"
                 ShowHeaderWhenEmpty="true">
         <Columns>
 
@@ -30,6 +29,11 @@
                     <asp:Label runat="server" Text='<%# Eval("Nombre_Region") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+             <asp:TemplateField HeaderText="Nombre Inspector">
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
              <asp:TemplateField HeaderText="Status">
                 <ItemTemplate>
                     <asp:Label runat="server" Text='<%# Eval("estatus_bueno") %>'></asp:Label>
@@ -38,14 +42,12 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     
-                    <a href='/InspectorThings/GenerarReportes?idreporte=<%# Eval("idreporte") %>' class="btn btn-info btn-lg">Editar</a>
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-lg btn-danger" CommandName="Delete" ToolTip="Delete" />
+                    <a href='/SupervisorThings/ChecarReportes?idreporte=<%# Eval("idreporte") %>' class="btn btn-info btn-lg">Revisar</a>
 
                 </ItemTemplate>
             </asp:TemplateField>
 
         </Columns>
     </asp:GridView>
-    
-</asp:Content>
 
+</asp:Content>
