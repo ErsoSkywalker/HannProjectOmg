@@ -68,7 +68,7 @@ namespace HannProjectOmg.AdministradorThings
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Auxilio uwu");
+                Console.WriteLine("Auxilio");
             }
         }
     }

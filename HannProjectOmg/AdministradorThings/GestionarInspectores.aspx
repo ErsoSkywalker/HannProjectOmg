@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarInspectores.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarInspectores" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarInspectores.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarInspectores" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Gestionar Inspectores</h2>
+    <h2><a href="/AdministradorThings/Admin" class="glyphicon glyphicon-chevron-left"></a>Gestionar Inspectores</h2>
     <hr />
    
     <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idUsuario"

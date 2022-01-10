@@ -6,9 +6,17 @@
         <div class="col">
            <h1>Bienvenido Inspector</h1>
             <hr />
-            <a href="/InspectorThings/GenerarReportes.aspx" class="btn btn-primary">Generar Reportes</a><asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+
+             <div class="container">
+              <div class="row justify-content-md-center">
+                <div class="col col-lg-2">
+                 <a href="/InspectorThings/GenerarReportes" class="btn btn-primary">Generar Reportes</a><asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                </div>
+              </div>        
+             </div>
         </div>
     </div>
+    <br />
 
 
    <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idreporte"

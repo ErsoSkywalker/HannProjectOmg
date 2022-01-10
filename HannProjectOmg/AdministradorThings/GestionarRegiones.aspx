@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarRegiones.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarRegiones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Gestionar Regiones</h2>
+    <h2><a href="/AdministradorThings/Admin" class="glyphicon glyphicon-chevron-left"></a>Gestionar Regiones</h2>
 
     <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idRegion"
                 ShowHeaderWhenEmpty="true">

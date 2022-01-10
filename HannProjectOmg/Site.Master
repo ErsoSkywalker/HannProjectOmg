@@ -50,7 +50,6 @@
                     <a class="navbar-brand" runat="server" href="~/">
                         <img src="https://static.cinepolis.com/img/lg-cinepolis-new.png" width="50%" id="cinepolis" alt="Cinépolis®">
                     </a>
-                    <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesion " OnClick="btnCerrarSesion_Click" />
                 </div>
                 <!--<div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -66,6 +65,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
+                <asp:Button class="btn btn-outline-primary btn-sm" ID="btnCerrarSesion" runat="server" Text="Cerrar Sesion " OnClick="btnCerrarSesion_Click" />
                 <p>&copy; <%: DateTime.Now.Year %> - Hannia Reyes</p>
             </footer>
         </div>

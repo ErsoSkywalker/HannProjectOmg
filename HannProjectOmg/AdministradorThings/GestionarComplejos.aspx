@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarComplejos.aspx.cs" Inherits="HannProjectOmg.AdministradorThings.GestionarComplejos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Gestionar Complejos</h2>
-
-    <a href="/AdministradorThings/Complejo" class="btn btn-info btn-lg">Agregar</a>
+    <h2><a href="/AdministradorThings/Admin" class="glyphicon glyphicon-chevron-left"></a>Gestionar Complejos</h2>
 
     <asp:GridView ID="grdInspectores" runat="server" AutoGenerateColumns="false" CssClass="table" OnRowDeleting="grdInspectores_RowDeleting" DataKeyNames="idComplejo"
                 ShowHeaderWhenEmpty="true">
@@ -40,5 +38,13 @@
 
         </Columns>
     </asp:GridView>
+
+    <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+              <a href="/AdministradorThings/Complejo" class="btn btn-info">Agregar</a>
+            </div>
+          </div>        
+    </div>
 
 </asp:Content>
