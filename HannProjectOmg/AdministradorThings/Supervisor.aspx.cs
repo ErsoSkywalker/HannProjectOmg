@@ -94,7 +94,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', " + drpStatus.SelectedValue + ", NULL ;";
+                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', " + drpStatus.SelectedValue + ", NULL, NULL ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
@@ -114,7 +114,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 2 ;";
+                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 2, NULL, NULL ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();

@@ -77,8 +77,7 @@ namespace HannProjectOmg.AdministradorThings
 
             cmd.CommandType = CommandType.Text;
             //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select [idComplejo], Complejo from Complejos where estatus = 1;";
-
+            cmd.CommandText = "Select c.[idComplejo], c.Complejo from Complejos c INNER JOIN Usuarios u ON(c.idRegion = u.idRegion) where c.estatus = 1 AND u.idUsuario = " + Request.QueryString["idUsuario"] + "; ";
             SqlDataReader reader = cmd.ExecuteReader();
 
             if (reader.HasRows)

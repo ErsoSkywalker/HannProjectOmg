@@ -105,6 +105,24 @@ namespace HannProjectOmg.AdministradorThings
         protected global::System.Web.UI.WebControls.DropDownList drpSupervisor;
 
         /// <summary>
+        /// Control lblRegion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegion;
+
+        /// <summary>
+        /// Control drpRegion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpRegion;
+
+        /// <summary>
         /// Control lblEstatus.
         /// </summary>
         /// <remarks>

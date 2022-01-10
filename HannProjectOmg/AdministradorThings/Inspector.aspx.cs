@@ -22,6 +22,7 @@ namespace HannProjectOmg.AdministradorThings
 
                 drpStatus.Items.Add(new ListItem("Activo", "1"));
                 drpStatus.Items.Add(new ListItem("Eliminado", "2"));
+                displayComboRegion();
                 displayComboData();
                 if (Request.QueryString == null || Request.QueryString.Keys.Count == 0)
                 {
@@ -29,6 +30,7 @@ namespace HannProjectOmg.AdministradorThings
                     btnUpdate.Visible = false;
                     drpStatus.Visible = false;
                     lblEstatus.Visible = false;
+                    btnComplejos.Visible = false;
                     
                 }
                 else
@@ -95,7 +97,7 @@ namespace HannProjectOmg.AdministradorThings
 
             cmd.CommandType = CommandType.Text;
             //Request.QueryString["idUsuario"]
-            cmd.CommandText = "Select [User], [Password], Nombre, Apellido, estatus, idSupervisor from Usuarios where idUsuario = "+ Request.QueryString["idUsuario"] +";";
+            cmd.CommandText = "Select [User], [Password], Nombre, Apellido, estatus, idSupervisor, idRegion from Usuarios where idUsuario = "+ Request.QueryString["idUsuario"] +";";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -110,6 +112,7 @@ namespace HannProjectOmg.AdministradorThings
                     txtApellido.Text = reader.GetString(3);
                     drpStatus.SelectedValue = Convert.ToString(reader.GetInt32(4));
                     drpSupervisor.SelectedValue = Convert.ToString(reader.GetInt32(5));
+                    drpRegion.SelectedValue = Convert.ToString(reader.GetInt32(6));
 
                 }
             }
@@ -123,8 +126,43 @@ namespace HannProjectOmg.AdministradorThings
         }
 
 
+        public void displayComboRegion()
+        {
 
-        
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+
+            con.Open();
+
+            ContentPlaceHolder Formulario = (ContentPlaceHolder)this.Master.FindControl("MainContent");
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            //Request.QueryString["idUsuario"]
+            cmd.CommandText = "Select * from Regiones;";
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+
+                    drpRegion.Items.Add(new ListItem(reader.GetString(1), Convert.ToString(reader.GetInt32(0))));
+
+                }
+            }
+            else
+            {
+                Response.Redirect("/AdministradorThings/GestionarInspectores");
+            }
+
+            con.Close();
+
+        }
+
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -134,7 +172,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '"+ txtPassword.Text.Trim()+"', '"+ txtNombre.Text.Trim() +"', '"+ txtApellido.Text.Trim() + "', " + drpStatus.SelectedValue + ", " + drpSupervisor.SelectedValue + " ;";
+                cmd.CommandText = "EXEC spUpdateUserData " + Request.QueryString["idUsuario"] + ", '" + txtUser.Text.Trim() + "', '"+ txtPassword.Text.Trim()+"', '"+ txtNombre.Text.Trim() +"', '"+ txtApellido.Text.Trim() + "', " + drpStatus.SelectedValue + ", " + drpSupervisor.SelectedValue + ", "+drpRegion.SelectedValue+" ;";
                 cmd.ExecuteNonQuery();
 
                 con.Close();
@@ -154,7 +192,7 @@ namespace HannProjectOmg.AdministradorThings
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 1 ;";
+                cmd.CommandText = "EXEC [spInsertNewUser] '" + txtUser.Text.Trim() + "', '" + txtPassword.Text.Trim() + "', '" + txtNombre.Text.Trim() + "', '" + txtApellido.Text.Trim() + "', 1, " + drpSupervisor.SelectedValue + ", " + drpRegion.SelectedValue + ";";
                 cmd.ExecuteNonQuery();
 
                 con.Close();

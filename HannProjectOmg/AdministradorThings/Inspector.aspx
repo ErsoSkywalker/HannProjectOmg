@@ -25,6 +25,12 @@
 
     <br />
 
+    <asp:Label ID="lblRegion" runat="server" CssClass="control-label" Text="Región"></asp:Label>
+    <asp:DropDownList ID="drpRegion" runat="server">
+    </asp:DropDownList>
+    
+    <br />
+
     <asp:Label ID="lblEstatus" runat="server" CssClass="control-label" Text="Estatus"></asp:Label>
     <asp:DropDownList ID="drpStatus" runat="server">
     </asp:DropDownList>
